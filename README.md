@@ -2,19 +2,19 @@
 This game was made as content for a video game development course, focussed in study on VR and 3D elements. 
 Please disregard any limitations or inconveniences, and enjoy.
 
-Release: (link under construction)
+## Builds
+[under construction]
 
 ## Authors
-Marcos Cardoso 
-<a href=https://github.com/mrplcardoso>@mrplcardoso</a>
-mrplcardoso@gmail.com
+* Marcos Cardoso ([Game Jolt](https://gamejolt.com/@marcoscardoso1_b064/games), mrplcardoso@gmail.com): Programmer, Music Composer
 
 ## Requirements
-Unity 2022.3  
+Unity 2021.3.15  
 Unity Web Module  
 GameJolt API
 
 ## Resources
 
+[under construction]
 
 *Authors modified, edited or mixed to better suit the scope of the game.
