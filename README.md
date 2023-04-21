@@ -15,6 +15,11 @@ Please disregard any limitations or inconveniences, and enjoy.
 * Git
 
 ## Resources
-[under construction]
+* Font  
+  Secret Hallowenn: https://www.dafont.com/secret-halloween.font  
+  PW Survival: https://www.dafont.com/pwsurvival.font  
+  
+* Sprites and Textures  
+  Icons: https://opengameart.org/content/free-unique-icons-pack-n-01-64x64-39-count  
 
 *Authors modified, edited or mixed to better suit the scope of the game.
