@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Detectable Name
+  - Interactable Hint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactive
   - Water
   - UI
-  - 
+  - Detectable
   - 
   - 
   - 
