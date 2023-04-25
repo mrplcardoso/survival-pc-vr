@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
   PlayerUnit playerUnit;
+  PlayerAttributes playerAttributes;
   CharacterController controller;
 
   Vector3 xVelocity, yVelocity, zVelocity;
@@ -14,10 +15,18 @@ public class PlayerMove : MonoBehaviour
   void Awake()
   {
     playerUnit = GetComponent<PlayerUnit>();
+    playerAttributes = GetComponent<PlayerAttributes>();
     controller = GetComponent<CharacterController>();
 
     playerUnit.AddFrameAction(MoveAction);
   }
+
+	private void Start()
+	{
+		walkAttribute = playerAttributes[AttributeType.Walk];
+    sprintAttribute = playerAttributes[AttributeType.Sprint];
+    jumpAttribute = playerAttributes[AttributeType.Jump];
+	}
 
 	private void OnDestroy()
 	{
@@ -31,27 +40,34 @@ public class PlayerMove : MonoBehaviour
     controller.Move(velocity * Time.deltaTime);
   }
 
-	#region Move Input
+  #region Move Input
 
-	[SerializeField] float walk, sprint;
+  AttributeData walkAttribute, sprintAttribute;
+  float walk => walkAttribute.value;
+  float sprint => sprintAttribute.value;
 	float cacheSpeed;
+	bool sprinting => InputHandler.holdTrigger;
 
 	void MoveInput()
   {
-    bool sprinting = InputHandler.holdTrigger;
-    if (sprinting) { cacheSpeed = sprint; }
-    else { cacheSpeed = walk; }
+		Vector2 direction = Vector2.ClampMagnitude(InputHandler.moveDirectional, 1f);
+    if (direction.sqrMagnitude <= 0.0001f) { cacheSpeed = 0; }
+    else
+    {
+      if (sprinting) { cacheSpeed = sprint; }
+      else { cacheSpeed = walk; }
+    }
 
-    Vector2 direction = Vector2.ClampMagnitude(InputHandler.moveDirectional, 1f);
     xVelocity = direction.x * cacheSpeed * transform.right;
     zVelocity = direction.y * cacheSpeed * transform.forward;
   }
 
-	#endregion
+  #endregion
 
-	#region Jump Input
+  #region Jump Input
 
-	[SerializeField] float jump;
+  AttributeData jumpAttribute;
+  float jump => jumpAttribute.value;
 	const float gravity = 20f;
 
 	void JumpInput()

@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 
 	private void Start()
 	{
-		if(detectableCanvas == null) { PrintConsole.Error("DetectableCanvas not defined"); }
+		if(detectableCanvas == null) { PrintConsole.Error("DetectableCanvas not defined"); return; }
 
 		detector = GetComponent<PlayerDetector>();
 		detector.AddObserver(OnDetected);
