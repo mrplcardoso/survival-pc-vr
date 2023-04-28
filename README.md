@@ -21,5 +21,8 @@ Please disregard any limitations or inconveniences, and enjoy.
   
 * Sprites and Textures  
   Icons: https://opengameart.org/content/free-unique-icons-pack-n-01-64x64-39-count  
+  
+  https://assetstore.unity.com/packages/tools/terrain/procedural-island-basis-generator-58951
+  https://assetstore.unity.com/packages/3d/vegetation/trees/low-poly-tree-pack-57866
 
 *Authors modified, edited or mixed to better suit the scope of the game.
